@@ -3,7 +3,7 @@ ab_savings = 8000
 equity = 26600
 fees = 8000
 mortgage = 297000
-goal = 0
+goal = 375000
 
 class HousePurchase:
     def __init__(self, savings_1, savings_2, equity, fees, mortgage, goal):
