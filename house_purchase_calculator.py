@@ -1,3 +1,5 @@
+# This was the original program I made to calculate the house we could afford.
+
 wes_savings = 33800
 ab_savings = 8000
 equity = 26600
@@ -14,14 +16,17 @@ class HousePurchase:
         self.mortgage = mortgage
         self.goal = goal
 
+    # Calculates the price of the house you can currently afford.
     def get_house_budget(self):
         total = (self.savings_1 + self.savings_2 + self.equity + self.mortgage) - self.fees
         return f'House price you can afford = £{"{:,}".format(total)}'
     
+    # Calculates this total deposit.
     def get_deposit(self):
         deposit = self.savings_1 + self.savings_2 + self.equity
         return f'Total deposit = £{"{:,}".format(deposit)}'
 
+    # This function calculates how much is left to save to reach the goal house price
     def left_to_save(self):
         current_budget = self.get_house_budget().replace(",",'')
         current_budget = int(current_budget[-6:])
@@ -33,7 +38,7 @@ class HousePurchase:
         elif self.goal < current_budget:
             return "Goal amount less than current house budget."
    
-our_house = HousePurchase(wes_savings, ab_savings, equity, fees, mortgage, goal)
+our_house = HousePurchase(wes_savings, ab_savings, equity, fees, mortgage, goal) 
 
 print(our_house.get_house_budget())
 print("")
